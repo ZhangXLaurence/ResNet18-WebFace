@@ -83,16 +83,16 @@ def main():
     # Get Hyper parameters and sets
 
     # General arg
-    # arg_DeviceIds = [0,1,2,3,4,5,6,7]
-    arg_DeviceIds = [0,1,2,3]
-    arg_NumEpoch = 50
-    arg_InfoInterval = 100
+    arg_DeviceIds = [0,1,2,3,4,5,6,7]
+    # arg_DeviceIds = [0,1,2,3]
+    arg_NumEpoch = 100
+    arg_InfoInterval = 10
     arg_SavePath = './checkpoints/resnet50_webface_'
-    arg_SaveEpochInterbal = 10
+    arg_SaveEpochInterbal = 5
 
     # Data arg
     arg_TrainDataPath = '/home/xzhang/data/face/WebFace/CASIA-WebFace-112X96/'
-    arg_TrainBatchSize = 256
+    arg_TrainBatchSize = 512
     arg_InputSize = 224
 
     arg_FeatureDim = 2048
