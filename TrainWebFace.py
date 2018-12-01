@@ -87,7 +87,7 @@ def main():
     # arg_DeviceIds = [0,1,2,3]
     arg_NumEpoch = 500
     arg_InfoInterval = 5
-    arg_SavePath = './checkpoints/resnet50_webface_'
+    arg_SavePath = './checkpoints/resnet18_webface_'
     arg_SaveEpochInterbal = 10
 
     # Data arg
@@ -95,7 +95,7 @@ def main():
     arg_TrainBatchSize = 512
     arg_InputSize = 224
 
-    arg_FeatureDim = 2048
+    arg_FeatureDim = 512
     
     # Learning rate arg
     arg_BaseLr = 0.1
@@ -111,7 +111,7 @@ def main():
     TrainLoader, arg_ClassNum = DataLoad.LoadFaceImgFoldData(arg_TrainBatchSize, arg_TrainDataPath, transform=arg_Transform)
 
     # Inference Model Constructing
-    Inference = resnet50(pretrained=False, num_classes=arg_ClassNum)
+    Inference = resnet18(pretrained=True, num_classes=arg_ClassNum)
     # Inner Product
     # InnerProduct = MarginInnerProduct.CosFaceInnerProduct(arg_FeatureDim, arg_ClassNum, scale=20.0, margin=0.3)
     # InnerProduct = MarginInnerProduct.ArcFaceInnerProduct(arg_FeatureDim, arg_ClassNum, scale=30.0, margin=0.005)
