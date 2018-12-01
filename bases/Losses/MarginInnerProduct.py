@@ -274,7 +274,7 @@ class ArcFaceInnerProduct(nn.Module):
         if return_ip:
             return cos, marginal_logits, innerproduct_logits
         else:
-            return cos, marginal_logits, avg_theta, min_theta, max_theta, stdv_theta, avg_w_norm, avg_x_norm
+            return cos, marginal_logits
 
 
 
