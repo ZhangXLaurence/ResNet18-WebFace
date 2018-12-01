@@ -87,7 +87,7 @@ def main():
     arg_DeviceIds = [0,1,2,3]
     arg_NumEpoch = 50
     arg_InfoInterval = 100
-    arg_SavePath = './checkpoints/softmax_MNIST_'
+    arg_SavePath = './checkpoints/resnet50_webface_'
     arg_SaveEpochInterbal = 10
 
     # Data arg
@@ -114,10 +114,8 @@ def main():
     Inference = resnet50(pretrained=False, num_classes=arg_ClassNum)
     # Inner Product
     # InnerProduct = MarginInnerProduct.CosFaceInnerProduct(arg_FeatureDim, arg_ClassNum, scale=20.0, margin=0.3)
-    InnerProduct = MarginInnerProduct.ArcFaceInnerProduct(arg_FeatureDim, arg_ClassNum, scale=30.0, margin=0.005)
-    # InnerProduct = GradReform.MyLinear(arg_FeatureDim, arg_ClassNum)
-    # InnerProduct = MarginInnerProduct.NormalizedInnerProductWithScale(arg_FeatureDim, arg_ClassNum)
-    
+    # InnerProduct = MarginInnerProduct.ArcFaceInnerProduct(arg_FeatureDim, arg_ClassNum, scale=30.0, margin=0.005)
+    InnerProduct = MarginInnerProduct.AdaScale(arg_FeatureDim, arg_ClassNum)
     # Training Model
     Model = torch.nn.DataParallel(TrainingModel(Inference, InnerProduct), arg_DeviceIds)
 
