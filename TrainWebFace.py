@@ -92,7 +92,7 @@ def main():
 
     # Data arg
     arg_TrainDataPath = '/home/xzhang/data/face/WebFace/CASIA-WebFace-112X96/'
-    arg_TrainBatchSize = 512
+    arg_TrainBatchSize = 1024
     arg_InputSize = 224
 
     arg_FeatureDim = 512
