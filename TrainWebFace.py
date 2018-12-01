@@ -85,10 +85,10 @@ def main():
     # General arg
     arg_DeviceIds = [0,1,2,3,4,5,6,7]
     # arg_DeviceIds = [0,1,2,3]
-    arg_NumEpoch = 100
-    arg_InfoInterval = 10
+    arg_NumEpoch = 500
+    arg_InfoInterval = 5
     arg_SavePath = './checkpoints/resnet50_webface_'
-    arg_SaveEpochInterbal = 5
+    arg_SaveEpochInterbal = 10
 
     # Data arg
     arg_TrainDataPath = '/home/xzhang/data/face/WebFace/CASIA-WebFace-112X96/'
