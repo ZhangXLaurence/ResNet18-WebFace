@@ -7,7 +7,6 @@ from bases.DataLoader import DataLoad
 from bases.DataLoader import TransformWebFace
 from bases.Models import resnet50
 from bases.Losses import MarginInnerProduct
-from bases.Losses import GradReform
 from Tools import ModelSaver
 
 class TrainingModel(nn.Module):
