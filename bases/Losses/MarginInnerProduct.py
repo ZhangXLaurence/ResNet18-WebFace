@@ -269,7 +269,7 @@ class AdaScale(nn.Module):
             med_theta_in_pi = math.pi/4.0
         self.scale = (1.0/math.cos(med_theta_in_pi)) * math.log(get_average(Bs))          
         ###
-        print('Avg theta is {:.6f}'.format(avg_theta.item()) )
+        print('Avg theta is {:.6f}'.format(avg_theta) )
         return cos, logits
 
 
