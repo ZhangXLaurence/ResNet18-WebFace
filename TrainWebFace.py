@@ -14,11 +14,11 @@ class TrainingModel(nn.Module):
     def __init__(self, inference_model, inner_product):
         super(TrainingModel, self).__init__()
         self.inference_model = inference_model
-        self.gradreform = GradReform.IdentityMappingReformGrad()
+        # self.gradreform = GradReform.IdentityMappingReformGrad()
         self.inner_product = inner_product
     def forward(self, x, label):
         features = self.inference_model(x)
-        features = self.gradreform(features)
+        # features = self.gradreform(features)
         logits = self.inner_product(features, label)
         # logits = self.inner_product(features)
         return features, logits
@@ -41,7 +41,6 @@ class TrainingModel(nn.Module):
 #     print('Validating Accuracy on the {} test images:{}/{} ({:.2f}%) \n' .format(
 #         total, correct, total, (100. * float(correct)) / float(total))
 #         )
-
 
 
 def Train(train_loader, model, criterion, optimizer, epoch, info_interval):
@@ -86,7 +85,7 @@ def main():
 
     # General arg
     # arg_DeviceIds = [0,1,2,3,4,5,6,7]
-    arg_DeviceIds = [0,1]
+    arg_DeviceIds = [0,1,2,3]
     arg_NumEpoch = 50
     arg_InfoInterval = 100
     arg_SavePath = './checkpoints/softmax_MNIST_'
