@@ -108,7 +108,8 @@ class ResNet(nn.Module):
         self.layer3 = self._make_layer(block, 256, layers[2], stride=2)
         self.layer4 = self._make_layer(block, 512, layers[3], stride=2)
         self.avgpool = nn.AvgPool2d(7, stride=1)
-        self.ip1 = nn.Linear(6144, 512 *block.expansion)
+        # self.ip1 = nn.Linear(6144, 512 *block.expansion)
+        self.fc = nn.Linear(6144, 512 *block.expansion)
         # self.ip1 = nn.Linear(512, 512 *block.expansion)
 
         for m in self.modules():
@@ -148,7 +149,8 @@ class ResNet(nn.Module):
 
         x = self.avgpool(x)
         x = x.view(x.size(0), -1)
-        x = self.ip1(x)
+        # x = self.ip1(x)
+        x = self.fc(x)
 
         return x
 
