@@ -111,7 +111,7 @@ def main():
     TrainLoader, arg_ClassNum = DataLoad.LoadFaceImgFoldData(arg_TrainBatchSize, arg_TrainDataPath, transform=arg_Transform)
 
     # Inference Model Constructing
-    Inference = resnet18(pretrained=True, num_classes=arg_ClassNum)
+    Inference = resnet18(pretrained=False, num_classes=arg_ClassNum)
     # Inner Product
     # InnerProduct = MarginInnerProduct.CosFaceInnerProduct(arg_FeatureDim, arg_ClassNum, scale=20.0, margin=0.3)
     # InnerProduct = MarginInnerProduct.ArcFaceInnerProduct(arg_FeatureDim, arg_ClassNum, scale=30.0, margin=0.005)
