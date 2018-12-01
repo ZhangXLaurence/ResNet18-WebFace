@@ -239,7 +239,7 @@ class ArcFaceInnerProduct(nn.Module):
         ############################## Norm ##############################
         avg_w_norm = (sum(norm_weights)/len(norm_weights)).item()
         avg_x_norm = (sum(norm_features)/len(norm_features)).item()
-        print('Avg weight norm is {:.6f}, avg feature norm i {:.6f}'.format(avg_w_norm, avg_x_norm))
+        # print('Avg weight norm is {:.6f}, avg feature norm i {:.6f}'.format(avg_w_norm, avg_x_norm))
         ############################## Norm ##############################
         innerproduct_logits = torch.matmul(feat, torch.transpose(self.weights, 0, 1))
         # Calculate logits
