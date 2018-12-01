@@ -5,7 +5,7 @@ from torchvision import transforms
 
 from bases.DataLoader import DataLoad
 from bases.DataLoader import TransformWebFace
-from bases.Models import resnet50
+from bases.Models import resnet18
 from bases.Losses import MarginInnerProduct
 from Tools import ModelSaver
 
